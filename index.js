@@ -1,4 +1,11 @@
-module.exports.generateHappyNumbers = function (count, startFrom = 1) {
+/**
+ * Generates happy numbers.
+ * @param {number} count The amount of happy numbers to generate.
+ * @param {number} startFrom The inclusive minimum number.
+ * @param {number} max The inclusive maximum number.
+ * @returns An array of happy numbers.
+ */
+module.exports.generateHappyNumbers = function (count, startFrom = 1, max = Infinity) {
     let num = startFrom;
     let sum;
     let numCopy;
@@ -16,11 +23,14 @@ module.exports.generateHappyNumbers = function (count, startFrom = 1) {
             if (sum === 1) {
                 nums.push(num);
                 ++num;
+
+                if (num > max) return nums;
                 break;
             }
 
             if (trail.has(sum)) {
                 ++num;
+                if (num > max) return nums;
                 break;
             }
 
@@ -34,6 +44,11 @@ module.exports.generateHappyNumbers = function (count, startFrom = 1) {
     return nums;
 }
 
+/**
+ * Determines if the given number is happy.
+ * @param {number} num The input number.
+ * @returns True if the number is happy. False otherwise.
+ */
 module.exports.isHappy = function (num) {
     const trail = new Set();
     while (true) {
