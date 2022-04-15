@@ -1,7 +1,8 @@
 module.exports.generateHappyNumbers = function (count, startFrom = 1, max = Infinity) {
-    let num = startFrom;
+    let num = Math.floor(startFrom);
     let sum;
     let numCopy;
+    let currentDigit;
     const trail = new Set();
     const nums = [];
 
@@ -9,8 +10,10 @@ module.exports.generateHappyNumbers = function (count, startFrom = 1, max = Infi
         numCopy = num;
         while (true) {
             sum = 0;
-            for (const digit of numCopy.toString()) {
-                sum += digit * digit;
+            while (numCopy !== 0) {
+                currentDigit = numCopy % 10;
+                sum += currentDigit * currentDigit;
+                numCopy = (numCopy / 10) >> 0; // Faster than Math.floor
             }
 
             if (sum === 1) {
@@ -39,10 +42,13 @@ module.exports.generateHappyNumbers = function (count, startFrom = 1, max = Infi
 
 module.exports.isHappy = function (num) {
     const trail = new Set();
+    let currentDigit;
     while (true) {
         sum = 0;
-        for (const digit of num.toString()) {
-            sum += digit * digit;
+        while (num !== 0) {
+            currentDigit = num % 10;
+            sum += currentDigit * currentDigit;
+            num = (num / 10) >> 0; // Faster than Math.floor
         }
 
         if (sum === 1) {
