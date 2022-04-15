@@ -1,10 +1,3 @@
-/**
- * Generates happy numbers.
- * @param {number} count The amount of happy numbers to generate.
- * @param {number} startFrom The inclusive minimum number.
- * @param {number} max The inclusive maximum number.
- * @returns An array of happy numbers.
- */
 module.exports.generateHappyNumbers = function (count, startFrom = 1, max = Infinity) {
     let num = startFrom;
     let sum;
@@ -44,11 +37,6 @@ module.exports.generateHappyNumbers = function (count, startFrom = 1, max = Infi
     return nums;
 }
 
-/**
- * Determines if the given number is happy.
- * @param {number} num The input number.
- * @returns True if the number is happy. False otherwise.
- */
 module.exports.isHappy = function (num) {
     const trail = new Set();
     while (true) {
