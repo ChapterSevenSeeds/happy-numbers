@@ -13,9 +13,11 @@ isHappy(5); // Returns false.
 generateHappyNumbers(count: number, min = 1, max = Infinity): number[];
 ```
 
-- `count` specifies how many numbers you want to generate. This paramter will override the `max` parameter.
+- `count` specifies how many numbers you want to generate.
 - `min` The inclusive number to start generating from (whether or not it be a happy number).
 - `max` The inclusive number to stop generating at (whether or not it be a happy number).
+
+The function will return an array once either `count` or `max` is reached.
 
 ```ts
 isHappy(num: number): boolean;
