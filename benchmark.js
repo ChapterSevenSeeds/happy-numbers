@@ -3,6 +3,7 @@ const { performance } = require("perf_hooks")
 const prettyms = require('pretty-ms');
 
 console.log(generateHappyNumbers(5));
+console.log(generateHappyNumbers(50));
 
 const TEST_COUNT = 10;
 const COUNT = 100000;
