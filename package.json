@@ -1,6 +1,6 @@
 {
   "name": "happy-numbers2",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A small library for happy numbers.",
   "main": "index.js",
   "scripts": {
